@@ -1,4 +1,5 @@
 
+
 def isValid(s: str) -> bool:
     l = []
     for i in s:
@@ -13,6 +14,15 @@ def isValid(s: str) -> bool:
         elif i == '}' and len(l) != 0:
             if l[-1] == '{':
                 l.pop()
+        elif i == ')' and len(l) == 0:
+            
+            break
+        elif i == ']' and len(l) == 0 :
+            break
+        elif i == '}' and len(l) == 0:
+            break
+        return False
+            
         
     if len(l) == 0:
         return True
